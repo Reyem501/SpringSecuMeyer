@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow.xsd">
+
+    <!-- Affichage page menu principal -->
+    <view-state id="MenuPrincipal"
+                view="flows/register/MenuApplication"
+                redirect="false">
+        <transition on="experts"
+                    to="MenuExperts" />
+        <transition on="Themes"
+                    to="MenuThemes" />
+        <transition on="Competences"
+                    to="MenuCompetences" />
+    </view-state>
+
+    <!-- Affichage page gestion de experts -->
+    <view-state id="MenuExperts"
+                view="flows/register/GestionExperts">
+    </view-state>
+
+    <!-- Affichage page gestion de themes -->
+    <view-state id="MenuThemes"
+                view="flows/register/GestionThemes">
+    </view-state>
+
+    <!-- Affichage page gestion de competences -->
+    <view-state id="MenuCompetences"
+                view="flows/register/GestionCompetences">
+    </view-state>
+
+    <!-- Mutualisation des transitions communes -->
+    <global-transitions>
+        <!-- Retour au menu principal -->
+        <transition on="Menu"
+                    to="MenuPrincipal" />
+        <!-- Sortie de l'application -->
+        <transition to="Sortie" />
+    </global-transitions>
+
+</flow>
