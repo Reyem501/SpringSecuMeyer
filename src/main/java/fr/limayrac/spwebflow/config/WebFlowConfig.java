@@ -30,7 +30,7 @@ public class WebFlowConfig extends AbstractFlowConfiguration {
     public FlowDefinitionRegistry flowRegistry(){
         return getFlowDefinitionRegistryBuilder()
                 .setBasePath("classpath:flows")
-                .addFlowLocation("/resources/flows.registers/Menu-flow.xml")
+                .addFlowLocation("/registers/Menu-flow.xml")
                 .setFlowBuilderServices(flowBuilderServices())
                 .build();
     }
