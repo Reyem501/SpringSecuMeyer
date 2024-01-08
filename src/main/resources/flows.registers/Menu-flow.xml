@@ -9,32 +9,49 @@
     <view-state id="MenuPrincipal"
                 view="flows.register/MenuApplication"
                 redirect="false">
-        <transition on="experts"
-                    to="MenuExperts" />
-        <transition on="Themes"
-                    to="MenuThemes" />
-        <transition on="Competences"
-                    to="MenuCompetences" />
+        <transition on="fraisFormation"
+                    to="MenuFrais" />
     </view-state>
 
-    <!-- Affichage page gestion de experts -->
-    <view-state id="MenuExperts"
-                view="flows/register/GestionExperts">
+
+    <!-- Affichage page déclaration frais ETAPE 1 -->
+    <view-state id="MenuFrais"
+                view="flows.register/FormulaireFraisFormation">
+        <transition on="fraisTransport"
+                    to="MenuFraisTransport" />
     </view-state>
 
-    <!-- Affichage page gestion de themes -->
-    <view-state id="MenuThemes"
-                view="flows/register/GestionThemes">
+    <!-- Affichage page déclaration frais transport ETAPE 2 -->
+    <view-state id="MenuFraisTransport"
+                view="flows.register/FormulaireFraisTransport">
+        <transition on="fraisHebergement"
+                    to="MenuFraisHebergement" />
     </view-state>
 
-    <!-- Affichage page gestion de competences -->
-    <view-state id="MenuCompetences"
-                view="flows/register/GestionCompetences">
+    <!-- Affichage page déclaration frais hebergement ETAPE 3 -->
+    <view-state id="MenuFraisHebergement"
+                view="flows.register/FormulaireFraisHebergement">
+        <transition on="fraisRestauration"
+                    to="MenuFraisRestauration" />
     </view-state>
+
+    <!-- Affichage page déclaration frais restauration ETAPE 4 -->
+    <view-state id="MenuFraisRestauration"
+                view="flows.register/FormulaireFraisRestauration">
+        <transition on="fraisRecapitulatif"
+                    to="MenuFraisRecapitulatif" />
+    </view-state>
+
+    <!-- Affichage page déclaration frais récapitulatif ETAPE 5 -->
+    <view-state id="MenuFraisRecapitulatif"
+                view="flows.register/FormulaireFraisRecapitulatif">
+    </view-state>
+
 
     <!-- La page de sortie de l'application -->
     <end-state id="Sortie"
-               view="flows/register/SortieApplication"/>
+               view="index"/>
+
 
     <!-- Mutualisation des transitions communes -->
     <global-transitions>
