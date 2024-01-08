@@ -29,8 +29,7 @@ public class WebFlowConfig extends AbstractFlowConfiguration {
     @Bean
     public FlowDefinitionRegistry flowRegistry(){
         return getFlowDefinitionRegistryBuilder()
-                .setBasePath("classpath:flows")
-                .addFlowLocation("/registers/Menu-flow.xml")
+                .addFlowLocation("classpath:/flows.registers/Menu-flow.xml", "registers")
                 .setFlowBuilderServices(flowBuilderServices())
                 .build();
     }
@@ -85,6 +84,7 @@ public class WebFlowConfig extends AbstractFlowConfiguration {
         templateResolver.setCharacterEncoding("UTF-8");
         return templateResolver;
     }
+
 
     @Bean
     public FlowHandlerMapping flowHandlerMapping(){
