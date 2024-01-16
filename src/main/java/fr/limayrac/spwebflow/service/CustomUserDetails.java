@@ -1,0 +1,26 @@
+package fr.limayrac.spwebflow.service;
+
+import fr.limayrac.spwebflow.models.Utilisateur;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import java.util.Collection;
+
+public class CustomUserDetails implements UserDetails {
+    private Utilisateur user;
+    public CustomUserDetails(Utilisateur user) {this.user = user; }
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() { return null; }
+    @Override
+    public String getPassword() { return user.getMdp(); }
+    @Override
+    public String getUsername() { return user.getEmail(); }
+    @Override
+    public boolean isAccountNonExpired() { return true; }
+    @Override
+    public boolean isAccountNonLocked() {return false;}
+    @Override
+    public boolean isCredentialsNonExpired() {return false;}
+    @Override
+    public boolean isEnabled() { return true; }
+    public String getFulName() { return user.getNom() + " " + user.getPrenom(); }
+}

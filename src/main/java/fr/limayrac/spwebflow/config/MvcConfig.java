@@ -1,4 +1,3 @@
-/*
 package fr.limayrac.spwebflow.config;
 
 import org.springframework.context.annotation.Configuration;
@@ -15,4 +14,4 @@ public class MvcConfig implements WebMvcConfigurer {
         registry.addViewController("/register").setViewName("register");
 
     }
-}*/
+}
