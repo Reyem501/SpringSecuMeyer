@@ -1,6 +1,6 @@
 package fr.limayrac.spwebflow.models;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 import java.util.Date;
 

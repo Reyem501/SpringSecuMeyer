@@ -1,7 +1,7 @@
 package fr.limayrac.spwebflow.models;
 
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "FRAIS_HEBERGEMENT")
