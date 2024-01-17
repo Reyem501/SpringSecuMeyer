@@ -23,15 +23,8 @@ public class WebSecurityConfig {
             auth.requestMatchers("/user").hasRole("USER");
             auth.anyRequest().authenticated();
         })
-                .formLogin(formlogin ->
-                        formlogin
-                                .loginPage("/login")
-                                .defaultSuccessUrl("/accueil")
-                                .permitAll()
-                )
-                .build();
+                .formLogin(Customizer.withDefaults()).build();
     }
-
 
     @Bean
     public UserDetailsService users() {
@@ -51,3 +44,4 @@ public class WebSecurityConfig {
         return new BCryptPasswordEncoder();
     }
 }
+
