@@ -2,30 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Formulaire de Frais de Restauration</title>
+    <title>Formulaire de Coordonnées Bancaires</title>
 
-    <!-- Liens vers les fichiers Bootstrap CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
 <div class="container mt-5">
-    <h2>Formulaire de Frais de Restauration</h2>
-    <form th:action="@{/submit-frais-restauration}" method="post">
-        <!-- Sélection de la date de restauration -->
+    <h2>Formulaire de Coordonnées Bancaires</h2>
+    <form th:action="@{/submit-coordonnees-bancaires}" method="post">
+        <!-- Champ IBAN -->
         <div class="mb-3">
-            <label for="dateRestauration" class="form-label">Date de Restauration :</label>
-            <input type="date" class="form-control" id="dateRestauration" name="dateRestauration" required>
+            <label for="iban" class="form-label">IBAN :</label>
+            <input type="text" class="form-control" id="iban" name="iban" required>
         </div>
 
-        <!-- Champ Montant Restauration -->
+        <!-- Champ RIB -->
         <div class="mb-3">
-            <label for="montantRestauration" class="form-label">Montant Restauration :</label>
-            <input type="text" class="form-control" id="montantRestauration" name="montantRestauration" required>
+            <label for="rib" class="form-label">RIB :</label>
+            <input type="text" class="form-control" id="rib" name="rib" required>
         </div>
 
         <!-- Bouton Suivant -->
         <!-- <button type="submit" class="btn btn-primary">Suivant</button> -->
-        <a th:href="@{ ${flowExecutionUrl} + '&_eventId=coordonneesBancaires'}" class="btn btn-primary">Suivant</a>
+        <a th:href="@{ ${flowExecutionUrl} + '&_eventId=fraisRecapitulatif'}" class="btn btn-primary">Suivant</a>
 
     </form>
 </div>

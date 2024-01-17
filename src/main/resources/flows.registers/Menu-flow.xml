@@ -38,11 +38,18 @@
     <!-- Affichage page déclaration frais restauration ETAPE 4 -->
     <view-state id="MenuFraisRestauration"
                 view="flows.register/FormulaireFraisRestauration">
+        <transition on="coordonneesBancaires"
+                    to="MenuCoordonneesBancaires" />
+    </view-state>
+
+    <!-- Affichage page déclaration coordonnées bancaires ETAPE 5 -->
+    <view-state id="MenuCoordonneesBancaires"
+                view="flows.register/FormulaireCoordonneesBancaires">
         <transition on="fraisRecapitulatif"
                     to="MenuFraisRecapitulatif" />
     </view-state>
 
-    <!-- Affichage page déclaration frais récapitulatif ETAPE 5 -->
+    <!-- Affichage page déclaration frais récapitulatif ETAPE 6 -->
     <view-state id="MenuFraisRecapitulatif"
                 view="flows.register/FormulaireFraisRecapitulatif">
     </view-state>
