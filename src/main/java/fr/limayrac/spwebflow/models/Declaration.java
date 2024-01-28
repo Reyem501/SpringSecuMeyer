@@ -12,6 +12,10 @@ public class Declaration {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idDeclaration;
 
+    public String getCoordonneesBancaire() {
+        return coordonneesBancaire;
+    }
+
     @Column(name = "COORDONNEES_BANCAIRE", nullable = false)
     private String coordonneesBancaire;
 
@@ -41,4 +45,37 @@ public class Declaration {
     private Utilisateur utilisateur;
 
     // getters and setters
+
+    public Long getIdDeclaration() {
+        return idDeclaration;
+    }
+
+    public Date getDateFormation() {
+        return dateFormation;
+    }
+
+    public String getLieuFormation() {
+        return lieuFormation;
+    }
+
+    public String getIntituleFormation() {
+        return intituleFormation;
+    }
+
+    public FraisRestauration getFraisRestauration() {
+        return fraisRestauration;
+    }
+
+    public FraisHebergement getFraisHebergement() {
+        return fraisHebergement;
+    }
+
+    public FraisTransport getFraisTransport() {
+        return fraisTransport;
+    }
+
+    public Utilisateur getUtilisateur() {
+        return utilisateur;
+    }
+
 }
